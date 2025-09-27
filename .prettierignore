@@ -1,0 +1,47 @@
+
+# =========================
+# Build / sortie
+# =========================
+dist
+build
+out
+
+# =========================
+# Angular cache & fichiers temporaires
+# =========================
+.angular
+.tmp
+coverage
+
+# =========================
+# Node.js
+# =========================
+node_modules
+
+# =========================
+# Environnements & fichiers de config sensibles
+# =========================
+*.env
+*.local
+*.log
+src/environments/*.ts
+
+# =========================
+# IDE / éditeur
+# =========================
+.vscode
+.idea
+
+# =========================
+# Git
+# =========================
+.git
+.gitignore
+
+# =========================
+# Auto-generated / lock files
+# =========================
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+

@@ -1,0 +1,25 @@
+{ ? // Largeur maximale d'une ligne avant retour automatique à la ligne
+    "printWidth"
+  : 100, ? // Nombre d'espaces par tabulation
+    "tabWidth"
+  : 2, ? // Utiliser des espaces plutôt que des tabs
+    "useTabs"
+  : false, ? // Ajouter un point-virgule à la fin des instructions
+    "semi"
+  : true, ? // Utiliser des quotes simples plutôt que doubles
+    "singleQuote"
+  : true, ? // Espaces à l'intérieur des accolades
+    "bracketSpacing"
+  : true, ? // Parenthèses autour des arguments de fonction fléchée
+    "arrowParens"
+  : 'always', ? // Fin de ligne LF (Linux/macOS) pour compatibilité cross-OS
+    "endOfLine"
+  : 'lf', // Ajoute une virgule finale partout (objets, tableaux, ? fonctions)
+    "trailingComma"
+  : 'all', ? // Met des quotes sur les propriétés uniquement si nécessaire
+    "quoteProps"
+  : 'as-needed', ? // Ignore la sensibilité aux espaces dans les templates HTML (utile pour Angular)
+    "htmlWhitespaceSensitivity"
+  : 'ignore', ? // Formate automatiquement le code embedded (JS/TS/CSS/HTML) dans un autre fichier
+    "embeddedLanguageFormatting"
+  : 'auto' }
