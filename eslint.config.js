@@ -1,13 +1,18 @@
+// eslint.config.js
 // @ts-check
-const eslint = require('@eslint/js');
-const tseslint = require('typescript-eslint');
-const angular = require('angular-eslint');
-const eslintConfigPrettier = require('eslint-config-prettier');
+import eslint from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
+import angular from 'angular-eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import tseslint from 'typescript-eslint';
 
-module.exports = tseslint.config(
+export default tseslint.config(
   {
     ignores: ['.angular/**', '.nx/**', 'coverage/**', 'dist/**'],
     files: ['**/*.ts'],
+    plugins: {
+      '@stylistic': stylistic,
+    },
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
@@ -33,12 +38,14 @@ module.exports = tseslint.config(
           style: 'kebab-case',
         },
       ],
+
       // Angular best practices
       '@angular-eslint/no-empty-lifecycle-method': 'warn',
-      '@angular-eslint/prefer-on-push-component-change-detection': 'off', // should be turned on!
+      '@angular-eslint/prefer-on-push-component-change-detection': 'warn',
       '@angular-eslint/prefer-output-readonly': 'warn',
       '@angular-eslint/prefer-signals': 'warn',
       '@angular-eslint/prefer-standalone': 'warn',
+
       // TypeScript best practices
       '@typescript-eslint/array-type': ['warn'],
       '@typescript-eslint/consistent-indexed-object-style': 'off',
@@ -64,20 +71,21 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-inferrable-types': 'warn',
       '@typescript-eslint/no-shadow': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
+
       // JavaScript best practices
       eqeqeq: 'error',
       complexity: ['error', 20],
       curly: 'error',
       'guard-for-in': 'error',
       'max-classes-per-file': ['error', 1],
-      'max-len': [
+      '@stylistic/max-len': [
         'warn',
         {
           code: 120,
           comments: 160,
         },
       ],
-      'max-lines': ['error', 400],
+      'max-lines': ['error', 400], // my favorite rule to keep files small
       'no-bitwise': 'error',
       'no-console': 'off',
       'no-new-wrappers': 'error',
@@ -96,6 +104,7 @@ module.exports = tseslint.config(
           allowSeparatedGroups: true,
         },
       ],
+
       // Security
       'no-eval': 'error',
       'no-implied-eval': 'error',
