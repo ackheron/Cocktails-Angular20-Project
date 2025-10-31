@@ -63,3 +63,8 @@
 .w-half {
   width: 50%;
 }
+.image-wrapper {
+  position: relative; // ✅ nécessaire pour fill
+  width: 100%;
+  height: 100%;
+}

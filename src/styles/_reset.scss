@@ -54,6 +54,8 @@ picture {
   max-width: 100%;
   display: block;
   border-radius: var(--radius);
+  // object-fit: contain;
+  object-fit: cover;
 }
 
 /* Inherit fonts for inputs and buttons */

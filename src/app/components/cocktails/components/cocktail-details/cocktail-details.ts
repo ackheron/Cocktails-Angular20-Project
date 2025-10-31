@@ -4,7 +4,6 @@ import { Cocktail } from 'app/shared/interfaces/cocktails.interface.js';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-cocktail-details',
-  imports: [],
   templateUrl: './cocktail-details.html',
   styleUrl: './cocktail-details.scss',
 })
